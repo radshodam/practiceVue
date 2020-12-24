@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>page4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="js/vue.js"></script>
+  </head>
+  <body dir="rtl">
+    <h1>جلسه ی چهارم راجب رویداد ها و ایونت ها</h1>
+    <div id="app">
+      <form action="/index3.html" v-on:submit.prevent="handle">
+        <!-- v-on:submit="handle" -->
+
+        <button type="submit">دکمه ی 1</button>
+      </form>
+    </div>
+
+    <!-- takamol yaft -->
+    <div id="app2">
+      <form action="/index3.html" @submit.prevent="handle2">
+        <button type="submit">دکمه ی 2</button>
+      </form>
+    </div>
+    <p>با استفاده از VUE</p>
+    <p>
+      استفاده از دکمه که ایونت داره و برای سابمیت و یا فرستاده شدن به صفحه ی
+      جدید و یا با دیفالت کردنمان که بخوایم نره توی صفحه
+    </p>
+    <h3>برای استفاده از عملگر یا فانکشنی در vue?</h3>
+    <span>برای اینکار من جایگاهی در new vue مشخص میکنم به نام methods:</span>
+
+    <h4>
+      هندل کردن در vue از قدیم تا الان یکسری تکامل یافته که من از اول و انواع ان
+      را در دکمه های مختلف و کار کردن با e.pereventDefault که در jsاستفاده میشد
+      را کامل با توضیحات خودم مینویسم
+    </h4>
+    <span
+      >یادم باشد که اevent برای دیفالت کردن و یا پاس داد نشدن فرم باید به فرم
+      داده داده شود</span
+    >
+    <p>
+      ۱-خب یکی از کارها این است که از همان js که prevent defaultهست استفاده کنم
+      همین کاری که برای دکمه یک کردم
+    </p>
+    <p>
+      برای زمانیکه من اگه بخوام از preventDefault(); در درون متد خودم استفاد
+      نکنم میتونم با یک ایونت ساده ی ویو این کار را درجایی که فرمم قرار دارد
+      بگذارم و v-on:event(click mous down v aya har eventi)="handle" تبدیل میشه
+      به v-on:(click mous down v aya har eventi).prevent="handle"
+    </p>
+    <p>
+      vueاومد گفت چرا این همه سم طولانی مینویسی بیا از این به بعد رجا v-on و
+      دیدی که برای ایونت استفاده میشد دیگه بجاش از @استفاده کن . در واقع به
+      بیانی میگه موقع مثلا سابمیت چیکار کن ویا موقع کلیک ...
+    </p>
+    <p>که به این صورت تکامل یافت @submit.prevent="handle"</p>
+    <h2>
+      میخوام یک دکمه بذارم که وقتی من دکمه رو زدم با ایونتی که داره یک دانه عدد
+      به دکمه اضافه شه
+    </h2>
+    <p>
+      خب من بعد از ساختن دیتا برای دکمه که بپاس داده شد میام به دکمم یک ایونت
+      میدم ایونت کلیک @click=که برابر با یک فانکشن میگذارم که چی بشه وقتی کلیک
+      شد . و حالا ان فانکشن را در متد هام تعریف میکنم و میگم چیکار بکن
+    </p>
+    <span
+      >بعد از ساخت متود آن فانکشن را درون متد ریخته و از کلمه کلیدی this استفاده
+      میکنم</span
+    >
+    <span
+      >در متودمان هم به اسمی که درون دیتا دادیم که جایگزین به دکم میشد با
+      this.نامش دسترسی پیدا کردم حالا میگم افزایش دهنده یا کاهش دهندهو..</span
+    >
+    <div id="app3">
+      <button style="padding: 25px" @click="afzaieshi">addad {{count}}</button>
+    </div>
+    <p>
+      برای بالا چون فانکشنی که داریم به نام افزایشی خیلی سادست و یک جمله هم
+     افزایشی بیشتر نیست و میشه باز تکامل داد به یک جمله در همون دکمه بصورت
+    </p>
+
+    <span>@click="afzaieshiبه جای این ها و متد و غیره @click="count+=1"</span
+    ><span>که در اینجا دقیقا همان درون فانکشن است بدون دیس</span>
+    <div id="app4"><button @click="nomre+=1">dokme {{nomre}}</button></div>
+ <!-- copy kardan in paiin ke neveshtam dorost nist baraire yad giri gozashtam -->
+    <script>
+      new Vue({
+        el: "#app",
+
+        methods: {
+          handle: function (e) {
+            // e.preventDefault();
+            alert("hi");
+          },
+        },
+      });
+      new Vue({
+        el: "#app2",
+
+        methods: {
+          handle2: function (e) {
+            // e.preventDefault();
+            alert("hi");
+          },
+        },
+      });
+      new Vue({
+        el: "#app3",
+
+        data: {
+          count: 0,
+        },
+        methods: {
+          // مساوی نمیذاریم دو نقطه میذاریم
+          afzaieshi: function () {
+            this.count += 1;
+          },
+        },
+      });
+
+      new Vue({
+        el: "#app4",
+
+        data: {
+          nomre: 0,
+        },
+      });
+    </script>
+  </body>
+</html>

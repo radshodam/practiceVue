@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>page4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="js/vue.js"></script>
+  </head>
+  <body dir="rtl">
+  <p>قبل از شروع یک نکته برای اینکه حالت که از حالا وییو {{}} که اینها وقتی صفحه رفرش میدم برا یک میلی ثانیه نمایش میده بخوام نمایش نده میام به نام مثلا V-clock</p>
+  <span>  style v-cloak:none;
+</span>  <p>  btn type="submit" v-cloak>  {{dokme}} </p>
+<span>که در اینجا بعد به استایل نان میدم و حل میشه v-clock</span>
+    <h1>جلسه پنچم کامپوننتها</h1>
+    </p>
+    <div id="#appss">
+        <button type="submit" @click="dokme+=2">دکمه ی {{dokme}}</button>
+        <br>
+        <button type="submit" @click=afzaiesh> دکمه ی {{dokme}}</button>
+      </form>
+    </div>
+<p>خب این بالا را نگاه میکنم وهمچنین کدهامو دوتا مشکل هست که باید تکامل پیددا کنه</p>
+<p>یکی اینکه من  میتونم با یک دکمه کار دوتا دکمه رو انجام بدم و حتی دو دکمه ای که وظایفشون باهم فرق میکننه مثلا یکی لایک اونیکی دیسلایک نیازی نیست دوتا دکمه بزنیم واینجا کامپوننتها میانن وسط</p>
+<h1>استفاده از کامپوننت ها</h1>
+<p>کامپوننت ها موضوع مهم هست در وییو که کار کرن باهاش لذت بخشه</p>
+<h3>مراحل ساختش: <br>1-ساخت کامپوننت با دستور ویی.کمپوننت به صورت رو به رو<span style="text-align: left;direction: ltr; display: block;"> vue.component('مثلا counter', {};</span></h3> <span>counter یا هر چیزی در واقع تگی رو درست کنم که در اچ تی ام ال وجود نداره <br></span> 
+  <h3>2- بعد از ساخت تگ کامپوننت نوبت اینه تمپلیت ساختن است وتمپلیت رو درون اکولاد کامپوننت ساخته میشه</h3> <span style="text-align: left;direction: ltr; display: block;"> vue.component('مثلا counter', {
+    template:' < h1 >hello mohamad< / h1> '
+  };</span>
+  <span>پس از این هرجای اچ تی ام ال بنویسم  < counter >< /counter > درونش تمپلیت قرار میگیرد</span>
+  <span>اگر دوبار پشت هم از همین تمپلیت counterاستفاده کنم بدونم واقعا دوتا کامپوننت جداگانه هستن که مرتبط نیستن مثل دوت دکمه ی بالا که یکی میزنم اون یکی هم تغغیر میکنه</span>
+  <span>نکته حواسم باشه همون اول اون  new V u e اصل کاری رو نوشته باشم که  به el:#'app' بود رو بنویسم این برای کار کردن ویو هستش و نکته ی دیگه اینکه تو کامپوننت ها برای اینکه یک چیززی رو تغغی بدیم کاری کنیم مثل قبل نمیام از دیتا استفاده کنم بلکه درون خود کامپوننت یک دیتا از مدل فانکشنال تعریف میکنم و کار میکنم ُ</span>
+ <h2>برای اینکه ببینم کامپوننت ها از هم جدا هستن و فانکشنال نیستن در بالا که h1 تعریف کردم باکش میکنم و یک دکمه میسازم.راستش یک دکمه تعریف کنم ولی بالا دوبار ازش استفاده کنم و این دوتا دکمه ی ساخته شده باهم عملگرشون جداست و همچنین و همچنی متن تایتلشون که نامشون هست هم جداستئ</h2>
+ <h3>برای تمام گفته های بالا موضوع ها و نکته هام شروع میشه </h3>
+ <h1>1-اول که دکمه رو درون اون template ساختم میبینم یکم بی ریخته میشه تکامل یافته کنه و این دیگه نه  به template:'#id' یک ایدی میدم</h1>
+ <span>فعلا به این ایدی درون template کار ندارم </span>
+ <h1>2-حالا برای استفاده از این کامپوننت خودم و تمپلیت خودم میخوام استفاده کنم 01-اول کامپوننت خودم را هر چند بار که میخوام استفاده شه مثلا دو بار چون دو تا دکمه میخوام دوبار مینویسم < counter >< /counter > و < counter > < /counter > که با این کار که درون اون #app با این کار با نوشتن این دوتا مشخص مردم که دوتا کاپوننت جداگانه دارم که هنوز دیتایی نگرفته</counter></h1>
+ <h1>
+vue.comments('conter',{
+  template:مثلا "#conter-template"
+})
+خب تا اینجای کار فهمیدم که استفاده از اون کامپوننت که دوتا ساختم چی بوده حالا وقتشه تمپلیت رو تعریف کنم در اچ تی ام الم و برای اینکار میام یک تگ به نام تمپلیت خار ج از محدوده ی #appبود میسازم و بهش یک ایدی میدم به  نام counter-template این تمپلیتها همشون حتما باید درون یک دیو باشن تا کار کنن و حالا هرچی تو این تمپلیت ها بنویسم میره نوشته میشه درون اون counter 
+
+ </h1>
+  <h1>
+    کل تگهایی که راجبشون حرف زدم به این صورت در اچ تی ام ال نوشته شد <br>
+    <span>
+      < div id=" app " > <br>
+      < counter > < /counter ><br>
+      < counter > < /counter ><br>
+      < /div>
+      <br>
+      < template id="conter-template"> <br>
+      < div> <br>
+      < h2> ودیسلایک لایک<  /h2> <br>
+      < button>{{count}}<  /button><br>
+      < /div><br>
+      < /template>
+    </span>
+  </h1>
+  <h1 style="direction: ltr;">
+    3- میام به صورت فانکشنال دیتا ی کامپوننت رو میسازم که درونش به این صورت مینویسم<br>
+    vue.comments('conter',{
+     template:مثلا "#conter-template" , 
+     data : function (){
+       return {count: 0}
+     }
+   })
+  </h1>
+  <h3>
+    3-چیزی که تا الان گفته شد دو تا دکمه ساختم که نام هردو یکی هستش و هنوز ایونتی بهش نگفتم که چیکار کنه  پس میام درون کانتر یک نام میذارم مثلا سابجکت , برابر قرار میدمش مثلا با اسم "لایک"  وبرای اینکه این نام گرفته شده تغییر پیدا کنه من یک propsتعریف میکنم که در اوت یک ارایه ای هست به نام subject نام چیزی که گذاشتم و اینجوری کامپوننت کار میکنه 
+  </h3>
+
+  <span>پس میام مراحل بالا که تکامل یافت رو مینویسم پایین اینجوریه </span>
+  <h1>
+    کل تگهایی که راجبشون حرف زدم به این صورت در اچ تی ام ال نوشته شد <br>
+    <span>
+      < div id=" app " > <br>
+      < counter subject ="یا هر اسمی دیسلایک"> < /counter ><br>
+      برای اینکه کار کنه حتما باید این پراپرتی رو تو کامپوننت تعریف کنم درون اون ویو یک پرابس تعیرف میکنم و یک ارایه که درونش نوشتن ساجکت یا هرچی <br>
+      < counter subject ="یا هر اسمی لایک"> < /counter ><br>
+      < /div>
+      <br>
+      که در ویوش اینه<br>
+      vue.comments('conter',{
+        template:مثلا "#conter-template" , 
+        props:["subject"], که این پرابز میتونه ارایه و ابجکت باشد من ارایه میخوام الان
+        data : function (){
+          return {count: 0}
+        }
+      })
+      <br>
+      <br>
+      <span>
+        < div id=" app " > <br>
+        < counter subject="like"> < /counter ><br>
+        < counter subject="dislike"> < /counter ><br>
+        < /div>
+        <br>
+        < template id="conter-template"> <br>
+        < div> <br>
+        < h2> {{subject}}<  /h2> <br>
+        < button @ click="count+=1">{{count}}<  /button><br>
+        < /div><br>
+        < /template>
+      </span>
+     </h1>
+
+    </span>
+  </h1>
+
+  <hr><hr>
+  <h1>sakht tamam chiz haii ke gofte shod</h1>
+  <hr><hr>
+  <div id="app">
+  <counter subject="like"></counter>
+  <counter subject="dislike"></counter>
+</div>
+<template id="counter-template">
+  <div>
+    <h1>{{subject}}</h1>
+    <button @click="count+=1">{{count}}</button>
+  </div>
+</template>
+
+ <h1></h1>
+ <script>
+        new Vue({
+         el:'#app',
+         data:{
+             dokme:0
+         }
+         ,
+         methods: {
+            afzaiesh:function(){
+                this.dokme+=1
+            }
+         },
+        })
+        // baraie amoozesh ke taghiir bein chizi ke dost mikonam va chizi ke misazam balaii pak nemikonam va Ela dorost nist ke chand ta new vue haminjoori besazam
+  // script marboot be kar asli hamin painie o bas
+        Vue.component('counter', {
+         template:"#counter-template",
+        props:["subject"],
+        data:function(){
+          return{count:0}
+        }
+        })
+        new Vue({
+          el:"#app"
+        })
+    </script>
+  </body>
+</html>

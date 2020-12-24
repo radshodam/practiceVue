@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1> {{name}} </h1>
+      <input v-model='name' >
+<br>
+<br>
+
+
+{{$data|json}}
+<!-- estefade az filter ha ke ba (|) filter mikonam  -->
+
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                name:"mohamad"
+            }
+        })
+    </script>
+  </body>
+</html>
