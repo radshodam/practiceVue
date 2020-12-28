@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="js/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        امروز راجب کامپیوتد ها صحبت میکنم وکامپیوتد ها یجورایی شبیه متود هستند
+        اما متفاوتند و یک محاسبه کننده هست و من در این قسمت میام کامپیوتد رو
+        قشنگ با اما و اگر که همتن ایف من است کار میکنم و هنگام استفاده از دیتایی
+        که بخوام برای کامپیوتد هام بگیرم باید از کلمه کلیدی دیس استفاده کنم منو
+        بشناسه
+      </p>
+      <!-- <h1>{{adad>80?'ali':'mbtadi'}}</h1> -->
+      <!-- <p>  یکی از راه هایی که میشه از اما اگر برای دوتایی ولی زشته خدایی پس از کامپیوتد
+          استفاده کرد اینه تا زمانی که از کامپیوتد استفاده
+          نکردمو اما چرا از کامپوتد استفاده میکنم چون همه در دسترس هست</p>  -->
+      <p>
+        برای استفاده از کامپیوتد میخوام اسکبل برگردانم و چاپ کنم پس میرم
+        کامپیوتد خودم تعریف میکنم و شرط و برگردان خودم هم میدم و اما
+      </p>
+
+      <h1>{{skil}}</h1>
+      <input type="number" v-model="adad" />
+
+      <h1>{{fullname}}</h1>
+      <input type="text" v-model="firstName">
+      <input type="text" v-model="lastName">
+      
+    </div>
+
+    <script>
+              new Vue({
+                  el:"#app",
+                  data:{
+                      // skil:"mobtadi",
+                      // برای استفاده از کامپیوتد میخوام اسکبل برگردانم و چاپ کنم اینجا کامنت میکنم
+                      adad:80,
+                      firstName:"mohamad",
+                      lastName:"zareai",
+                    //   fullname:"mohamad zareai"
+                    // اگر این فول نام من باشد اون کامپیوتد رو لحاظ نمیکند
+                  }
+                  ,
+                  computed: {
+                      // کامپیوتد پراپرتی ها کش میشوند برای همه صفحه ها استفاده میشوند این رو جلسه ای بعد باید درک شود
+                      skil: function(){
+                          if (this.adad>80) {
+                              return "hasan"
+                          } else {
+                              return"ali"
+                          }
+                      }
+                      // این برای مثال اول
+                      ,
+                    fullname:function(){
+
+                        return this.firstName+" "+this.lastName
+                     },
+                    }
+                  ,
+              })
+    </script>
+  </body>
+</html>

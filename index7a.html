@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>exampledirectiv </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <h1>{{message}}</h1> one -->
+        <!-- <h1 v-html="message"></h1> two v-html -->
+        <!-- <h1 v-if="message" v-text="message"></h1> three if true  -->
+        <!-- v-else , v-else-if="condition"مثل همند -->
+
+        
+        <!-- <li v-for="name in names" v-text="name"></li>  three -->
+        <!--  nokteie mohem hengam vtex ya 
+        vhtml ke minevisam oun name ya harchi ke goftim to names hast ro benevis 
+        baraie hamin dar inja v-text=name -->
+
+        <!-- <h1 v-on:click="num+=2" v-text="num"></h1>  chahar == @ -->
+
+
+     <!-- <h1 v-html="message"></h1> FIVE V-MODEL
+     <input type="text" v-model="message"> -->
+
+
+    <!-- <a v-bind:href="url" v-bind:title="tit" v-html="linkman"></a>  six
+     six halati ke darim dge mishe blind pak kard be jash az : estefade konam 
+     <a :href="url" :title="tit" v-html="linkman"></a> -->
+    
+
+
+        <!-- v-pre ke aslan namyesh nemidahad chizi v v-once ham faghat 
+            yekbar namaish midahad o taghir nemizarad bokanad -->
+
+
+<!-- <h2 v-once v-html="num"></h2>  seven
+    ba dadan v-once didam taghir nemikonad hamin ke baresh daram taghiir mikonad  ba modelam
+<input v-model="num" type="number"> -->
+
+
+
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data: { 
+                message:"benevis",
+                names:['mohamaad', 'mahtab'
+                ],
+                
+                 num:12,
+                  
+              
+                     linkman:"link rad shodam",
+                     url:"www.radsjodam.com",
+                     tit:"link download man",
+                 
+                
+            },
+            
+        })
+    </script>
+    
+</body>
+</html>
